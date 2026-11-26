@@ -1,0 +1,8 @@
+{
+  "name": "taking",
+  "description": "개인 Claude 스킬 모음. 한국어 기술 문서·코드 주석 작성 규칙(taking-docs) 등을 번들로 제공합니다.",
+  "version": "1.0.0",
+  "author": {
+    "name": "taking"
+  }
+}

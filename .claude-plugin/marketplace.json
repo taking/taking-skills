@@ -1,0 +1,13 @@
+{
+  "name": "taking-skills",
+  "owner": {
+    "name": "taking"
+  },
+  "plugins": [
+    {
+      "name": "taking",
+      "source": "./plugins/taking",
+      "description": "개인 Claude 스킬 모음 (한국어 기술 문서·코드 주석 작성 규칙 등)"
+    }
+  ]
+}
