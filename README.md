@@ -6,7 +6,7 @@
 
 | 스킬 | 호출 | 설명 |
 | --- | --- | --- |
-| `taking-docs` | `/taking:taking-docs` | 한국어 기술 문서와 코드 주석을 자연스럽고 정확하게 작성·검토합니다. README, 설계 문서, ADR, API 문서, GoDoc/JavaDoc/JSDoc, 커밋 메시지, PR 본문에 적용하고, 번역투와 AI 문체를 제거합니다. |
+| `taking-docs` | `/taking:taking-docs` | 한국어 기술 문서와 코드 주석을 자연스럽고 정확하게 작성하고 검토합니다. README, 설계 문서, ADR, API 문서, GoDoc, JavaDoc, JSDoc, 커밋 메시지, PR 본문에 적용하고, 번역투와 AI 문체를 제거합니다. |
 
 ## 설치
 
@@ -22,7 +22,7 @@ claude plugin install taking@taking-skills --scope user
 
 ### 세션 안에서
 
-```
+```text
 /plugin marketplace add taking/taking-skills
 /plugin install taking@taking-skills
 ```
@@ -40,7 +40,7 @@ claude plugin install taking@taking-skills --scope user
 
 호출하면 스킬 규칙이 로드되어 그 턴의 작업에 적용됩니다.
 
-```
+```text
 /taking:taking-docs            # 규칙을 적용해 작업 진행
 /taking:taking-docs <작업>     # 특정 작업 유형으로 바로 진행
 ```
@@ -51,14 +51,14 @@ claude plugin install taking@taking-skills --scope user
 | --- | --- |
 | `write` | 문서 종류와 독자를 확인하고 템플릿을 골라 새 문서를 작성합니다. |
 | `review` | 정확성, 논리, 구조, 문체 순으로 문제를 찾고 필요한 부분만 고칩니다. |
-| `rewrite` | 원문의 사실과 값을 보존하며 문단·표·다이어그램으로 재구성합니다. |
-| `polish` | 작성자 말투와 사실을 보존하고 AI 문체·번역투만 다듬습니다. 수정본, 주요 수정 사항, 확인이 필요한 부분으로 보고합니다. |
+| `rewrite` | 원문의 사실과 값을 보존하며 문단, 표, 다이어그램으로 재구성합니다. |
+| `polish` | 작성자 말투와 사실을 보존하고 AI 문체와 번역투만 다듬습니다. 수정본, 주요 수정 사항, 확인이 필요한 부분으로 보고합니다. |
 | `work report` | 작업 메모를 Jira 댓글, MR 본문, 작업 완료 보고서로 재구성합니다. |
-| `code comment review` | 코드 개선 가능성을 먼저 보고 주석을 유지·삭제·재작성·추가합니다. |
+| `code comment review` | 코드 개선 가능성을 먼저 보고 주석을 유지, 삭제, 재작성, 추가합니다. |
 
 ### 예시
 
-```
+```text
 /taking:taking-docs polish
 이 회고 초안 다듬어줘: (본문)
 
@@ -77,7 +77,7 @@ README.md 검토해줘
 # 설치 경로 확인
 claude plugin list
 
-# Markdown 형식·문체 검사
+# Markdown 형식과 문체 검사
 <플러그인 경로>/skills/taking-docs/scripts/lint-docs.sh <경로>
 
 # 코드 주석 검사
@@ -97,7 +97,7 @@ claude plugin marketplace remove taking-skills
 
 구조:
 
-```
+```text
 taking-skills/
 ├── .claude-plugin/
 │   └── marketplace.json     # 카탈로그 (name, owner, plugins[])
@@ -118,4 +118,4 @@ claude plugin validate ./plugins/taking    # 매니페스트와 구조 검사
 claude --plugin-dir ./plugins/taking       # 로컬에서 바로 띄워 확인
 ```
 
-수정 후에는 커밋·푸시하고, 설치한 머신에서 `claude plugin update taking@taking-skills`로 갱신합니다.
+수정한 뒤에는 커밋하고 푸시한 다음, 설치한 머신에서 `claude plugin update taking@taking-skills`로 갱신합니다.
